@@ -55,8 +55,10 @@
                     audio.play();
                     $('#Barcode').val(sString);
                     if ($(`a#${sString}`).length === 0) {
-
-                        $('#history').append(`<a id="${sString}" onclick="post('${sString}')">${sString}</a>`);
+                        $('#history').append(`<a id="${sString}"">${sString}</a>`);
+                        $(`a#${sString}`).click(function () {
+                            post(sString);
+                        })
                     }
                 }
             })

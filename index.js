@@ -32,7 +32,7 @@ app.post('/', (req, res) => {
         robotjs.typeString(req.query.sString);
         setTimeout(() => {
             robotjs.keyTap("enter");
-        }, 10);
+        }, 200);
         res.send('OK');
 
     } catch (error) {
