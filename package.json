@@ -1,0 +1,23 @@
+{
+  "name": "barcodereadersimulator",
+  "version": "1.0.0",
+  "description": "Simulate a hardware barcode reader with your phone and robotjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajtosM/barcodeReaderSimulator.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sajtosM/barcodeReaderSimulator/issues"
+  },
+  "homepage": "https://github.com/sajtosM/barcodeReaderSimulator#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "robotjs": "^0.6.0"
+  }
+}
