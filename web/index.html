@@ -37,19 +37,27 @@
         crossorigin="anonymous"></script>
 
     <script>
-        $('body').on('keydown', function (oEvent) {
-            if (oEvent.key === 'Enter') {
-
-            }
-        });
+        debugger
+        if (window.location.hostname !== 'localhost') {
+            $('body').on('keydown', function (oEvent) {
+                if (oEvent.key === 'Enter') {
+                    post($('#Barcode').val());
+                }
+            });
+        }
         $('button[type="submit"]').click(function () {
             post($('#Barcode').val());
         })
         function post(sString) {
             $.post(`/?sString=${sString}`).then(function (res) {
-                if ($(`a#${sString}`).length === 0) {
+                if (res === 'OK') {
+                    var audio = new Audio('https://www.soundjay.com/buttons/beep-07a.mp3');
+                    audio.play();
                     $('#Barcode').val(sString);
-                    $('#history').append(`<a id="${sString}" onclick="post('${sString}')">${sString}</a>`);
+                    if ($(`a#${sString}`).length === 0) {
+
+                        $('#history').append(`<a id="${sString}" onclick="post('${sString}')">${sString}</a>`);
+                    }
                 }
             })
         }
